@@ -142,7 +142,7 @@ if __name__ == '__main__':
     class_weight = torch.Tensor(config.class_weight)
     criterion = torch.nn.CrossEntropyLoss(weight=class_weight).to(device)
 
-    pretrained_dict = torch.load(config.pretrained_path)
+    pretrained_dict = torch.load(config.pretrained_path , map_location='cpu')
     model_dict = model.state_dict()
     pretrained_dict_1 = {k: v for k, v in pretrained_dict.items() if (k in model_dict)}
     model_dict.update(pretrained_dict_1)

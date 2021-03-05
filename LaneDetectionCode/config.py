@@ -8,7 +8,7 @@ img_channel = 3
 label_width = 256
 label_height = 128
 label_channel = 1
-data_loader_numworkers = 8
+data_loader_numworkers = 1
 class_num = 2
 
 # path
